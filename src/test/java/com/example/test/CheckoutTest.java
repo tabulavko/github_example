@@ -11,12 +11,13 @@ import org.junit.Test;
  */
 public class CheckoutTest{
 
+    public static final String WWW_W_3_SCHOOLS_COM_HOWTO = "https://www.w3schools.com/howto/";
     NavigationService navigationService;
 
     @Test
     public void test() {
 
-        String url = "https://www.w3schools.com/howto/";
+        String url = WWW_W_3_SCHOOLS_COM_HOWTO;
         Selenide.open(url);
         Assert.assertTrue(false);
         navigationService.open(url);

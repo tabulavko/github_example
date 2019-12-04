@@ -2,7 +2,6 @@ package com.example.test;
 
 import com.codeborne.selenide.Selenide;
 import com.example.tbulavko.business.page.HomePage;
-import com.example.tbulavko.business.steps.LoginService;
 import com.example.tbulavko.business.steps.NavigationService;
 import org.junit.Assert;
 import org.junit.Test;
@@ -12,15 +11,15 @@ import org.junit.Test;
  */
 public class CheckoutTest{
 
-    LoginService loginService;
     NavigationService navigationService;
 
     @Test
     public void test() {
 
-        Selenide.open("https://www.w3schools.com/howto/");
+        String url = "https://www.w3schools.com/howto/";
+        Selenide.open(url);
         Assert.assertTrue(false);
-        navigationService.open("https://www.w3schools.com/howto/");
+        navigationService.open(url);
 
         new HomePage().clickCheckoutFormLink();
     }

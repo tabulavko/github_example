@@ -15,7 +15,7 @@ public class CheckoutPage extends BasePage {
     WebElement cartAmount;
 
     public String getCartAmount() {
-        return cartAmount.getText();
+        return null;
     }
 
     public String getTotal() {

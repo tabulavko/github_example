@@ -24,7 +24,7 @@ public class LoginFormTest extends BaseTest {
         //should be moved into testdata
         customer = new JsonReader().getCustomer("Default");
         loginService = new LoginService();
-        navigationService = new NavigationService();
+        //navigationService = new NavigationService();
     }
 
     @Test
@@ -34,6 +34,10 @@ public class LoginFormTest extends BaseTest {
         Log4jLogger.info("Step: Fill in customer's form");
         loginService.loginCustomer(customer, false);
         Log4jLogger.info("Step: Verify 'Login modal' is not visible");
-        Assert.assertFalse("Login modal should not be visible!", new LoginPage().isLoginModalPresent());
+        boolean b = new LoginPage().isLoginModalPresent();
+        if (b) {
+            Log4jLogger.info("Step: Code to add ci=onarqube issue");
+        }
+        Assert.assertFalse("Login modal should not be visible!", b);
     }
 }
